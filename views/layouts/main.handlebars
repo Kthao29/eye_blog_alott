@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eye Blog Alot</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>
+        <a href="/">Eye Blog Alot</a>
+      </h1>
+      <nav>
+        {{#if loggedIn}}
+        <a href="/dashboard">Dashboard</a>
+        <button id="logout">Logout</button>
+        {{else}}
+        <a href="/dashboard">Dashboard</a>
+        <a href="/login">Login</a>
+        {{/if}}
+      </nav>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+  </div>
+
+{{#if loggedIn}}
+{{!-- script for signup and logout function --}}
+<script src="/javascript/logout.js"></script>
+<script src="/javascript/sign-up.js"></script>
+{{/if}}
+</body>
+
+</html>
